@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* Custom Revisions */
+.sliderp{
+color:#fff;
+font-size:15px;
+margin-right:20px;
+}
+
+.contacticos{
+	background: url('img/contact_icos.png') no-repeat;
+    width: 24px;
+    height: 44px;
+}
+.slidercontact{
+list-style:none;	
+
+}
+
+.logo{
+	height:60px !important;
+	width: 400px !important;
+	margin-top:-10px;
+}
+
+.brand{
+	padding: 0px 0px 0px !important;
+}
