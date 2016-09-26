@@ -25,3 +25,15 @@ list-style:none;
 .brand{
 	padding: 0px 0px 0px !important;
 }
+#Forensicbtn, #Enginebtn, #Businessbtn{
+	color: #fff;
+}
+#Forensicbtn:hover{
+	color: #ff9900 !important;
+}
+#Enginebtn:hover{
+	color: #4183D7 !important;
+}
+#Businessbtn:hover{
+	color: #339966 !important;
+}
