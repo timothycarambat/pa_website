@@ -60,7 +60,7 @@ header {
 }
 .navbar-inverse .nav > li > a {
     /*color: rgb(177, 177, 177);*/
-    font-size: 13px;
+    font-size: 17px;
     font-weight: bold;
     color: #fff;
     text-shadow: 0 1px 0 rgba(0,0,0,.5);
@@ -97,7 +97,7 @@ header {
 }
 .section_header h3 {
 	color: rgb(100, 100, 100);
-	font-weight: 300;
+	font-weight: 400;
 	font-style: italic;
 	font-size: 27px;
 	border-bottom: 1px solid #b3b3b3;
@@ -187,7 +187,7 @@ header {
 /* contact */
 #footer .contact {
 	text-align: right;
-	margin-left: 35px;
+	margin-left: 20%;
 }
 #footer .contact .footer_header {
 	text-align: left;
@@ -199,11 +199,13 @@ header {
 	background-color: #1f1f21;
 	padding: 8px 20px;
 	border-radius: 3px;
-	font-size: 14px;
+	font-size: 17px;
+	color:#FFF;
 	font-family: Lato !important;
 	width: 80%;
 	-webkit-transition: background-color .2s linear;
 	-moz-transition: background-color .2s linear;
+	resize: vertical;
 }
 #footer .contact input[type="text"]:focus,
 #footer .contact textarea:focus {

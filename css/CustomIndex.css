@@ -1,8 +1,8 @@
 @charset "utf-8";
-/* Custom Revisions */
+/* Custom css to index.html */
 .sliderp{
 color:#fff;
-font-size:15px;
+font-size:17px;
 margin-right:20px;
 }
 
@@ -24,6 +24,9 @@ list-style:none;
 
 .brand{
 	padding: 0px 0px 0px !important;
+}
+.media-mid-feat{
+	display: none;
 }
 #Forensicbtn, #Enginebtn, #Businessbtn{
 	color: #fff;
