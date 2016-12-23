@@ -666,5 +666,12 @@
     #showcase .features_op1_row .feature:hover .img_box{
         box-shadow:none;
     }
+    .media-mid-feat2{
+        display: none;
+    }
+    .media-mid-feat, .media-mid-feat > img{
+        display: block;
+        float: none !important;
+    }
 }
 

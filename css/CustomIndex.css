@@ -28,6 +28,10 @@ list-style:none;
 .media-mid-feat{
 	display: none;
 }
+
+.media-mid-feat2{
+	display: block;
+}
 #Forensicbtn, #Enginebtn, #Businessbtn{
 	color: #fff;
 }
@@ -39,4 +43,8 @@ list-style:none;
 }
 #Businessbtn:hover{
 	color: #339966 !important;
+}
+
+.error{
+	border: 1px solid red !important;
 }

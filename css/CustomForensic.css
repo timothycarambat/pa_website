@@ -38,3 +38,20 @@ list-style:none;
     padding: 10px 25px 10px 25px;
     height:120px;
 }
+
+.callbtn{
+    background-image: -moz-linear-gradient(top, #ff9900, #cc7a00);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ff9900), to(#cc7a00));
+    background-image: -webkit-linear-gradient(top, #ff9900, #cc7a00);
+    background-image: -o-linear-gradient(top, #ff9900, #cc7a00);
+    background-image: linear-gradient(to bottom, #ff9900, #cc7a00);
+}
+
+
+.callbtn:hover{
+    background-image: -moz-linear-gradient(top, #e68a00, #cc7a00);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e68a00), to(#cc7a00));
+    background-image: -webkit-linear-gradient(top, #e68a00, #cc7a00);
+    background-image: -o-linear-gradient(top, #e68a00, #cc7a00);
+    background-image: linear-gradient(to bottom, #e68a00, #cc7a00);
+}

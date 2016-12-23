@@ -107,7 +107,7 @@
 	font-style: italic;
 	float: left;
 	padding-bottom: 2px;
-	border-bottom: 1px solid;
+	/*border-bottom: 1px solid;*/
 	font-weight: normal;
 }
 #contact .map .box_wrapp ul.street{
@@ -232,8 +232,25 @@
 @media (max-width: 480px) {
 	#contact .contact .submit .right input[type="submit"]{
 		width: 60%;		
+		font-size: 14px;
+		margin-top: 10px;
 	}
 	#contact .map .box_wrapp{
 		width: 100%;	
 	}
+	.modalClose{
+	display: none;
+	}
+}
+
+.error{
+	border: 1px solid red !important;
+}
+
+.modalClose{
+	float:right !important;
+}
+.modalClose > a {
+	color: #000;
+	font-style: normal;
 }

@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" />
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/lib/animate.css" media="screen, projection">    
+    <link rel="stylesheet" type="text/css" href="css/lib/animate.css" media="screen, projection">   
+
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -213,7 +214,7 @@
                         When time is of the essence and deadlines approach, let Performance Analysis be your go-to engineering firm. We will quickly be able to take your needs and turn them around in surprising time due to our internal capabilities. Without compromise for quality we always will deliver the best results in the time you need.
                     </p>
                 </div>
-                <div class="span6">
+                <div class="span6 media-mid-feat2">
                     <img src="img/showcase2.png" class="pull-right" />
                 </div>
             </div>
@@ -232,6 +233,8 @@
             </div>
         </div>
     </div>
+
+
 
     <div id="clients">
         <div class="container">
@@ -277,9 +280,9 @@
                     <h3 class="footer_header">
                         Contact Us Today!
                     </h3>
-                    <form action="#" method="post">
-                        <input name="Name" type="text" placeholder="Your name" />
-                        <input name="email" type="text" placeholder="Your email" />
+                    <form id='ContFormSm' action="mail/contact-form-handler-Sm.php" method="post">
+                        <input name="name" type="text" placeholder="Your name" />
+                        <input name="mail" type="text" placeholder="Your email" />
                         <textarea  name="msg" rows="8" placeholder="Message"></textarea>
                         <input type="submit" value="Send" />
                     </form>
