@@ -102,7 +102,7 @@ $('#ContFormLg').submit(function(){
 
     var err = $('.error');
     if(err.length === 0){
-        return true;
+        $('#ContFormLg').submit();
     }else{
         return false;
     }
@@ -145,7 +145,7 @@ $('#ContFormSm').submit(function(){
 
     var err = $('.error');
     if(err.length === 0){
-        return true;
+       $('#ContFormSm').submit();
     }else{
         return false;
     }

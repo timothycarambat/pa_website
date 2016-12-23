@@ -4,23 +4,21 @@ $myemail = 'rambat1010@gmail.com';//<-----Put Your email address here.
 
 
 if(empty($_POST['name'])  || 
-   empty($_POST['email']) || 
-   empty($_POST['msg']))  ||
-   empty($_POST['phone'])
+   empty($_POST['mail']) || 
+   empty($_POST['msg'])   ||
+   empty($_POST['phone']))
 {
     $errors = "\n Error: all fields are required";
 }
 
 $name = $_POST['name']; 
-$email_address = $_POST['email']; 
+$email_address = $_POST['mail']; 
 $message = $_POST['msg']; 
 $phone = $_POST['phone'];
 
 
 
-if (!preg_match(
-"/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", 
-$email_address))
+if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/i", $email_address))
 {
     $errors .= "\n Error: Invalid email address";
 	exit();
@@ -33,7 +31,7 @@ if( empty($errors))
 {
 	$to = $myemail; 
 	$email_subject = "$subject" ;
-	$email_body = "$message\n\n"."Contact Info:\n$name\n"."E-mail:"."$email_address\n"."Phone:"."$phone\n"; 
+	$email_body = "$message\n\n"."Contact Info:\n$name\nE-mail: $email_address\nPhone: $phone\n"; 
 	
 	$headers = "From: $myemail \n"; 
 	$headers .= "Reply-To: $name $email_address";
@@ -43,7 +41,8 @@ if( empty($errors))
 	
 
 } 
-	header("Location: contact.html");
+
+	header("Location: http://pawebdraft.timothycarambat.com/contact.html");
 	
 ?>
 
