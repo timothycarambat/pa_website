@@ -1,20 +1,21 @@
-<?php 
+<?php
 $errors = '';
 $myemail = 'rambat1010@gmail.com';//<-----Put Your email address here.
 
 
-if(empty($_POST['name'])  || 
-   empty($_POST['mail']) || 
+if(empty($_POST['name'])  ||
+   empty($_POST['mail']) ||
    empty($_POST['msg'])   ||
    empty($_POST['phone']))
 {
     $errors = "\n Error: all fields are required";
 }
 
-$name = $_POST['name']; 
-$email_address = $_POST['mail']; 
-$message = $_POST['msg']; 
+$name = $_POST['name'];
+$email_address = $_POST['mail'];
+$message = $_POST['msg'];
 $phone = $_POST['phone'];
+$res = false;
 
 
 
@@ -24,27 +25,28 @@ if (!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]
 	exit();
 }
 
-$subject = "Website Contact from $name";
-  
+$subject = "PA Website Contact from $name";
+
 
 if( empty($errors))
 {
-	$to = $myemail; 
+	$to = $myemail;
 	$email_subject = "$subject" ;
-	$email_body = "$message\n\n"."Contact Info:\n$name\nE-mail: $email_address\nPhone: $phone\n"; 
-	
-	$headers = "From: $myemail \n"; 
+	$email_body = "$message\n\n"."Contact Info:\n$name\nE-mail: $email_address\nPhone: $phone\n";
+
+	$headers = "From: $myemail \n";
 	$headers .= "Reply-To: $name $email_address";
-	
 
-	mail($to,$email_subject,$email_body,$headers);
-	
 
-} 
+	$res = mail($to,$email_subject,$email_body,$headers);
 
-	header("Location: http://pawebdraft.timothycarambat.com/contact.html");
-	
+}
+
+if($res){
+  header("Location: http://pawebdraft.timothycarambat.com/contact.php?response=success");
+}else{
+  header("Location: http://pawebdraft.timothycarambat.com/contact.php?response=failure");
+}
+
+
 ?>
-
-
-

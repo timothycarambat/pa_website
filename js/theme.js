@@ -1,4 +1,11 @@
 $(function () {
+  if($('[data-response]').length > 0 && $('[data-response]').data('response') == 'success'){
+    setTimeout(function(){
+      $('[data-response]').slideUp();
+      $('.navbar').animate({top:0}, 300);
+    },2500);
+  }
+
     $(window).scroll(function() {
         if ($(".navbar").offset().top>30) {
             $(".navbar-inner").addClass("sticky");
@@ -71,7 +78,7 @@ $('#ContFormLg').submit(function(){
 
     $(data).each(function(i){
 
-        if(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g.test(data[i]) || data[i]=="" ){ 
+        if(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g.test(data[i]) || data[i]=="" ){
             if( i == 3){
                     $('#ContFormLg').find('textarea').addClass('error').val('');
 
@@ -118,7 +125,7 @@ $('#ContFormSm').submit(function(){
 
     $(data).each(function(i){
 
-        if(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g.test(data[i]) || data[i]=="" ){ 
+        if(/<(?:"[^"]*"['"]*|'[^']*'['"]*|[^'">])+>/g.test(data[i]) || data[i]=="" ){
             if( i == 2){
                     $('#ContFormSm').find('textarea').addClass('error').val('');
 
@@ -155,4 +162,3 @@ $('#ContFormSm').submit(function(){
 $('#closeModal').click(function(){
     $('#contactModal').hide();
 })
-

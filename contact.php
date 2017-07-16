@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/ico/favicon.ico"/>
-    
+
     <!-- Styles -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
@@ -22,7 +22,18 @@
     <![endif]-->
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-static-top">
+  <?php if(isset($_GET['response']) && $_GET['response']=='success'):?>
+		<div style='z-index: 1031;margin-bottom:0;width: 100%;' class="alert alert-success text-center" role="alert" data-response='success'>
+		<strong>Alright!</strong> Your message was sent! We will be in touch soon.
+		</div>
+
+	<?php elseif (isset($_GET['response']) && $_GET['response']=='failure'): ?>
+		<div style='z-index: 1031;margin-bottom:0;width: 100%;' class="alert alert-danger text-center" role="alert" data-response='failure'>
+		<strong>Wait!</strong> An error occured, please try again or call us at <a href='tel:1-985-276-4440'>1-985-276-4440.</a>
+		</div>
+	<?php endif; ?>
+
+    <div class="navbar navbar-inverse navbar-static-top" <?php echo isset($_GET['response'])? 'style="top:40px;"':''; ?>>
       <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -30,13 +41,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="index.html">
+            <a class="brand" href="index.php">
             <img class="logo" src="img/PApics/logoHead.png"/>
                 <!--<strong>Performance Analysis LLC.</strong>-->
             </a>
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right navbar-custom">
-                    <li><a href="index.html" >Home</a></li>
+                    <li><a href="index.php" >Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Services
@@ -47,7 +58,7 @@
                             <li><a href="engineering.html">Engineering</a></li>
                             <li><a href="business.html">Business Process Improvment</a></li>
                         </ul>
-                    </li> 
+                    </li>
                     <li><a href="about-us.html">Who We Are</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="privacy.html">Privacy</a></li>
@@ -167,7 +178,7 @@
                             © 2016 Performance Analysis. All rights reserved. Designed by <a href="http://timothycarambat.com">Timothy Carambat.</a>
                         </div>
                     </div>
-                </div>            
+                </div>
             </div>
         </div>
     </footer>

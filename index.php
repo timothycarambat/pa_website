@@ -14,15 +14,22 @@
     <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" />
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/lib/animate.css" media="screen, projection">   
+    <link rel="stylesheet" type="text/css" href="css/lib/animate.css" media="screen, projection">
 
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 <body class="pull_top">
-    <div class="navbar transparent navbar-inverse navbar-fixed-top">
+	<?php if(isset($_GET['response']) && $_GET['response']=='success'):?>
+		<div style='z-index: 1031;position: fixed;width: 100%;' class="alert alert-success text-center" role="alert" data-response='success'>
+		<strong>Alright!</strong> Your message was sent! We will be in touch soon.
+		</div>
+
+	<?php elseif (isset($_GET['response']) && $_GET['response']=='failure'): ?>
+		<div style='z-index: 1031;position: fixed;width: 100%;' class="alert alert-danger text-center" role="alert" data-response='failure'>
+		<strong>Wait!</strong> An error occured, please try again or call us at <a href='tel:1-985-276-4440'>1-985-276-4440.</a>
+		</div>
+	<?php endif; ?>
+
+    <div class="navbar transparent navbar-inverse navbar-fixed-top" <?php echo isset($_GET['response'])? 'style="top:40px;"':''; ?> >
       <div class="navbar-inner">
         <div class="container">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -30,12 +37,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="index.html">
+
+            <a class="brand" href="index.php">
             <img class="logo" src="img/PApics/logoHead.png"/>
             </a>
             <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.php" class="active">Home</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             Services
@@ -46,7 +54,7 @@
                             <li><a href="engineering.html">Engineering</a></li>
                             <li><a href="business.html">Business Process Improvment</a></li>
                         </ul>
-                    </li> 
+                    </li>
                     <li><a href="about-us.html">Who We Are</a></li>
                     <li><a href="resources.html">Resources</a></li>
                     <li><a href="privacy.html">Privacy</a></li>
@@ -57,11 +65,11 @@
     </div>
 
     <section id="feature_slider" class="">
-        <!-- 
+        <!--
             Each slide is composed by <img> and .info
             - .info's position is customized with css in index.css
             - each <img> parallax effect is declared by the following params inside its class:
-            
+
             example: class="asset left-472 sp600 t120 z3"
             left-472 means left: -472px from the center
             sp600 is speed transition
@@ -70,7 +78,7 @@
             Note: Maintain this order of params
 
             For the backgrounds, you can combine from the bgs folder :D
-        -->  
+        -->
 
          <article class="slide" id="tour" style="background: url('img/backgrounds/forensic.jpg') repeat-x top center;">
             <img class="asset left-480 sp880 t120 z3" src="img/PApics/forensic.jpg" />
@@ -78,58 +86,58 @@
                 <h2>Forensics</h2>
                 <p class="sliderp">Accident Reconstruction; Mechanical Failure Analysis; Product Failure and Liability</p>
                 <ul class="slidercontact">
-                
-                <li class="sliderp"> 
+
+                <li class="sliderp">
                  Phone: 985-276-4440 | 985-237-5337
                 </li>
-                <li class="sliderp"> 
+                <li class="sliderp">
                  Email: ops@pa-e.com
                 </li>
 				</ul>
                 <a id="Forensicbtn" href="forensics.html">See Our Services</a>
             </div>
-        </article>  
-        
+        </article>
+
         <article class="slide" id="tour" style="background: url('img/backgrounds/Engineering.jpg') repeat-x top center;">
             <img class="asset left-480 sp880 t120 z3" src="img/PApics/engineering.jpg" />
             <div class="info">
                 <h2>Engineering</h2>
                 <p class="sliderp">HVAC Design; Control system Development; Product Design and Development </p>
-                <ul class="slidercontact">                
-                <li class="sliderp"> 
+                <ul class="slidercontact">
+                <li class="sliderp">
                  Phone: 985-276-4440 | 985-237-5337
                 </li>
-                <li class="sliderp"> 
+                <li class="sliderp">
                  Email: ops@pa-e.com
                 </li>
 				</ul>
                 <a id="Enginebtn" href="engineering.html">See Our Services</a>
             </div>
-        </article>  
-        
+        </article>
+
         <article class="slide" id="tour" style="background: url('img/backgrounds/business.jpg') repeat-x top center;">
             <img class="asset left-480 sp880 t120 z3" src="img/PApics/business.jpg" />
             <div  id="bizinfo" class="info">
                 <span id="spectext"><h2>Business Improvement</h2></span>
                 <p class="sliderp">Quality System Development; Cost Reductions; Productivity Improvement</p>
-                <ul class="slidercontact">                
-                <li class="sliderp"> 
+                <ul class="slidercontact">
+                <li class="sliderp">
                  Phone: 985-276-4440 | 985-237-5337
                 </li>
-                <li class="sliderp"> 
+                <li class="sliderp">
                  Email: ops@pa-e.com
                 </li>
 				</ul>
                 <a id="Businessbtn" href="business.html">See Our Services</a>
             </div>
-        </article> 
+        </article>
     </section>
 
     <div id="showcase">
         <div class="container">
             <div class="section_header">
                 <h3>Our Specialties</h3>
-            </div>            
+            </div>
             <div class="row feature_wrapper">
                 <!-- Features Row -->
                 <div class="features_op1_row">
@@ -138,7 +146,7 @@
                         <div class="img_box">
                             <a href="forensics.html">
                                 <img src="img/service1.png">
-                                <span id="service1" class="circle"> 
+                                <span id="service1" class="circle">
                                     <span class="plus">&#43;</span>
                                 </span>
                             </a>
@@ -153,7 +161,7 @@
                         <div class="img_box">
                             <a href="engineering.html">
                                 <img src="img/service2.png">
-                                <span id="service2" class="circle"> 
+                                <span id="service2" class="circle">
                                     <span class="plus">&#43;</span>
                                 </span>
                             </a>
@@ -168,7 +176,7 @@
                         <div class="img_box">
                             <a href="business.html">
                                 <img src="img/service3.png">
-                                <span id="service3" class="circle"> 
+                                <span id="service3" class="circle">
                                     <span class="plus">&#43;</span>
                                 </span>
                             </a>
@@ -188,7 +196,7 @@
         <div class="container">
             <div class="section_header">
                 <h3>Why Choose Us?</h3>
-            </div> 
+            </div>
             <div class="row feature">
                 <div class="span6">
                     <img src="img/showcase1.png" />
@@ -208,7 +216,7 @@
                 </div>
                 <div class="span6 info">
                     <h3>
-                        Quick Turnaround 
+                        Quick Turnaround
                     </h3>
                     <p>
                         When time is of the essence and deadlines approach, let Performance Analysis be your go-to engineering firm. We will quickly be able to take your needs and turn them around in surprising time due to our internal capabilities. Without compromise for quality we always will deliver the best results in the time you need.
@@ -273,7 +281,7 @@
                         Locate Us:
                     </h3>
                     <a href="https://www.google.com/maps/place/203+Turnberry+Dr,+Covington,+LA+70433/@30.4262612,-90.0928969,17z/data=!3m1!4b1!4m5!3m4!1s0x86275bf25a178c31:0x5f3bdc60e7b9f943!8m2!3d30.4262612!4d-90.0907082">
-                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=30.426279,-90.090730&zoom=12&size=300x350&maptype=roadmap&markers=color:blue%7Clabel:1%7C30.426279,-90.090730&key=AIzaSyDdG-LZoLFInwESK4_zCaHEtxhGAHq3zPE" style="margin-bottom:20px;"> 
+                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=30.426279,-90.090730&zoom=12&size=300x350&maptype=roadmap&markers=color:blue%7Clabel:1%7C30.426279,-90.090730&key=AIzaSyDdG-LZoLFInwESK4_zCaHEtxhGAHq3zPE" style="margin-bottom:20px;">
                     </a>
                 </div>
                 <div class="span6 contact">
@@ -315,7 +323,7 @@
                             © 2016 Performance Analysis. All rights reserved. Designed by <a href="http://timothycarambat.com">Timothy Carambat.</a>
                         </div>
                     </div>
-                </div>            
+                </div>
             </div>
         </div>
     </footer>
@@ -325,6 +333,6 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/theme.js"></script>
 
-    <script type="text/javascript" src="js/index-slider.js"></script>	
+    <script type="text/javascript" src="js/index-slider.js"></script>
 </body>
 </html>
